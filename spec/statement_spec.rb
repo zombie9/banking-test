@@ -6,4 +6,6 @@ describe Statement do
     expect(subject.transactions.length).to eq 0
   end
 
+  it { is_expected.to respond_to(:add_transaction).with(4).arguments }
+
 end

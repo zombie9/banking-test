@@ -6,4 +6,7 @@ class Statement
     @transactions = transactions
   end
 
+  def add_transaction(date, credit, debit, blanace)
+  end
+
 end
