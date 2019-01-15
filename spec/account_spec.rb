@@ -27,6 +27,12 @@ describe Account do
       expect(subject.balance).to eq 50
     end
 
+    it 'should not let balance drop below zero' do
+      subject.deposit(99)
+      subject.withdraw(100)
+      expect(subject.balance).to eq 99
+    end
+
   end
 
 end

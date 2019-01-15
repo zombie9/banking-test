@@ -11,7 +11,11 @@ class Account
   end
 
   def withdraw(amount)
-    @balance -= amount
+    if @balance - amount >= 0
+      @balance -= amount
+    else
+      puts 'Sorry, you have infuccient funds'
+    end
   end
 
 end
