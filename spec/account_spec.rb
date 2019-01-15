@@ -17,4 +17,6 @@ describe Account do
 
   end
 
+  it { is_expected.to respond_to(:withdraw).with(1).argument }
+
 end
