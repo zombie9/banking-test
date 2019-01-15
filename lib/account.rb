@@ -1,9 +1,12 @@
+require_relative 'statement.rb'
+
 class Account
 
-  attr_reader :balance
+  attr_reader :balance, :statement
 
-  def initialize(balance = 0)
+  def initialize(balance = 0, statement = Statement.new)
     @balance = balance
+    @statement = statement
   end
 
   def deposit(amount)
