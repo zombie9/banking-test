@@ -11,11 +11,17 @@ class Account
   end
 
   def withdraw(amount)
-    if @balance - amount >= 0
-      @balance -= amount
-    else
-      puts 'Sorry, you have infuccient funds'
-    end
+    sufficient_funds?(amount) ? @balance -= amount : insufficient_funds
+  end
+
+  private
+
+  def sufficient_funds?(amount)
+    @balance - amount >= 0
+  end
+
+  def insufficient_funds
+    puts 'Sorry, you have infuccient funds'
   end
 
 end
