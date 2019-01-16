@@ -6,7 +6,11 @@ class Statement
     @transactions = transactions
   end
 
-  def add_transaction(date, credit, debit, blanace)
+  def add_transaction(credit, debit, balance)
+    @transactions << {:date => Time.now,
+                     :credit => credit,
+                     :debit => debit,
+                     :balance => balance}
   end
 
 end
