@@ -17,6 +17,11 @@ describe Account do
       expect(subject.balance).to eq 100
     end
 
+    it 'should pass a deposit to statement' do
+      subject.deposit(1000)
+      expect(subject.statement.transactions[0][:balance]).to eq 1000
+    end
+
   end
 
   it { is_expected.to respond_to(:withdraw).with(1).argument }

@@ -11,6 +11,7 @@ class Account
 
   def deposit(amount)
     @balance += amount
+    @statement.add_transaction(amount, 0, @balance)
   end
 
   def withdraw(amount)
