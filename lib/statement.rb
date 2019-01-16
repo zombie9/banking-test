@@ -7,13 +7,17 @@ class Statement
   end
 
   def add_transaction(credit, debit, balance)
-    @transactions << {:date => Time.now,
+    @transactions << {:date => Time.now.strftime('%d/%m/%Y'),
                      :credit => credit,
                      :debit => debit,
                      :balance => balance}
   end
 
   def print
+    puts 'date || credit || debit || balance'
+    @transactions.reverse.each do |t|
+      puts "#{t[:date]} || #{t[:credit]} || #{t[:debit]} || #{t[:balance]}"
+    end
   end
 
 end

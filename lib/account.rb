@@ -11,12 +11,12 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    @statement.add_transaction(amount, 0, @balance)
+    @statement.add_transaction(amount, nil, @balance)
   end
 
   def withdraw(amount)
     sufficient_funds?(amount) ? @balance -= amount : insufficient_funds
-    @statement.add_transaction(0, amount, @balance)
+    @statement.add_transaction(nil, amount, @balance)
   end
 
   private
@@ -26,7 +26,7 @@ class Account
   end
 
   def insufficient_funds
-    puts 'Sorry, you have infuccient funds'
+    puts 'Sorry, you have insuffucient funds'
   end
 
 end

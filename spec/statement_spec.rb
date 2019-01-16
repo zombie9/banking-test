@@ -20,4 +20,15 @@ describe Statement do
 
   it { is_expected.to respond_to(:print).with(0).arguments }
 
+  describe '#print' do
+
+    it 'should print out a transaction' do
+      subject.add_transaction(1000, 0, 1000)
+      expect do
+        subject.print
+      end.to output("date || credit || debit || balance\n16/01/2019 || 1000 || 0 || 1000\n").to_stdout
+    end
+
+  end
+
 end
