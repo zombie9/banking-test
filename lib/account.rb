@@ -16,6 +16,7 @@ class Account
 
   def withdraw(amount)
     sufficient_funds?(amount) ? @balance -= amount : insufficient_funds
+    @statement.add_transaction(0, amount, @balance)
   end
 
   private

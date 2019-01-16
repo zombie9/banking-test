@@ -40,6 +40,12 @@ describe Account do
       expect(subject.balance).to eq 99
     end
 
+    it 'should pass withdraw to statement' do
+      subject.deposit(100)
+      subject.withdraw(50)
+      expect(subject.statement.transactions[1][:balance]).to eq 50
+    end
+
   end
 
 end
