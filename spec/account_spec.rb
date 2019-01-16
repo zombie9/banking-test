@@ -1,7 +1,5 @@
 require 'account'
-
 describe Account do
-
   it { is_expected.to respond_to(:statement).with(0).arguments }
 
   it 'should begin with a balance of 0' do
@@ -11,7 +9,6 @@ describe Account do
   it { is_expected.to respond_to(:deposit).with(1).argument }
 
   describe '#deposit' do
-
     it 'should add a deposit to the balance' do
       deposit
       expect(subject.balance).to eq 100
@@ -21,13 +18,11 @@ describe Account do
       deposit
       expect(subject.statement.transactions[0][:balance]).to eq 100
     end
-
   end
 
   it { is_expected.to respond_to(:withdraw).with(1).argument }
 
   describe '#withdraw' do
-
     it 'should deduct funds from the balance' do
       deposit
       withdraw
@@ -45,7 +40,6 @@ describe Account do
       withdraw
       expect(subject.statement.transactions[1][:balance]).to eq 50
     end
-
   end
 
   private
@@ -57,5 +51,4 @@ describe Account do
   def withdraw
     subject.withdraw(50)
   end
-
 end

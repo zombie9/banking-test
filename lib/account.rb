@@ -1,7 +1,7 @@
 require_relative 'statement.rb'
 
+# class describes a client's bank account
 class Account
-
   attr_reader :balance, :statement
 
   def initialize(balance = 0, statement = Statement.new)
@@ -28,5 +28,4 @@ class Account
   def insufficient_funds
     puts 'Sorry, you have insuffucient funds'
   end
-
 end
