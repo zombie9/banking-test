@@ -13,13 +13,13 @@ describe Account do
   describe '#deposit' do
 
     it 'should add a deposit to the balance' do
-      subject.deposit(100)
+      deposit
       expect(subject.balance).to eq 100
     end
 
     it 'should pass a deposit to statement' do
-      subject.deposit(1000)
-      expect(subject.statement.transactions[0][:balance]).to eq 1000
+      deposit
+      expect(subject.statement.transactions[0][:balance]).to eq 100
     end
 
   end
@@ -29,23 +29,33 @@ describe Account do
   describe '#withdraw' do
 
     it 'should deduct funds from the balance' do
-      subject.deposit(100)
-      subject.withdraw(50)
+      deposit
+      withdraw
       expect(subject.balance).to eq 50
     end
 
     it 'should not let balance drop below zero' do
-      subject.deposit(99)
-      subject.withdraw(100)
-      expect(subject.balance).to eq 99
+      deposit
+      subject.withdraw(101)
+      expect(subject.balance).to eq 100
     end
 
     it 'should pass withdraw to statement' do
-      subject.deposit(100)
-      subject.withdraw(50)
+      deposit
+      withdraw
       expect(subject.statement.transactions[1][:balance]).to eq 50
     end
 
+  end
+
+  private
+
+  def deposit
+    subject.deposit(100)
+  end
+
+  def withdraw
+    subject.withdraw(50)
   end
 
 end

@@ -26,7 +26,7 @@ describe Statement do
       subject.add_transaction(1000, 0, 1000)
       expect do
         subject.print
-      end.to output("date || credit || debit || balance\n16/01/2019 || 1000 || 0 || 1000\n").to_stdout
+      end.to output("date || credit || debit || balance\n#{Time.now.strftime('%d/%m/%Y')} || 1000 || 0 || 1000\n").to_stdout
     end
 
   end

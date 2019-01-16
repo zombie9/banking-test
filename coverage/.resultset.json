@@ -52,6 +52,16 @@
         null,
         null,
         null,
+        1,
+        null,
+        1,
+        5,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
         null
       ],
       "/Users/darryl/Projects/banking-test/lib/account.rb": [
@@ -150,6 +160,6 @@
         null
       ]
     },
-    "timestamp": 1547642531
+    "timestamp": 1547647915
   }
 }
