@@ -18,4 +18,6 @@ describe Statement do
 
   end
 
+  it { is_expected.to respond_to(:print).with(0).arguments }
+
 end

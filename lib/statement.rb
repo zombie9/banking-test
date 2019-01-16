@@ -13,4 +13,7 @@ class Statement
                      :balance => balance}
   end
 
+  def print
+  end
+
 end
