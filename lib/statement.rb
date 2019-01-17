@@ -8,9 +8,9 @@ class Statement
 
   def add_transaction(credit, debit, balance)
     @transactions << { date: Time.now.strftime('%d/%m/%Y'),
-                       credit: credit,
-                       debit: debit,
-                       balance: balance }
+                       credit: format_currency(credit),
+                       debit: format_currency(debit),
+                       balance: format_currency(balance) }
   end
 
   def print
@@ -19,4 +19,11 @@ class Statement
       puts "#{t[:date]} || #{t[:credit]} || #{t[:debit]} || #{t[:balance]}"
     end
   end
+
+  private
+
+  def format_currency(amount)
+    format('%.2f', amount) if amount != nil
+  end
+
 end

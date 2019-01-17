@@ -19,6 +19,10 @@ class Account
     @statement.add_transaction(nil, amount, @balance)
   end
 
+  def print_statement
+    @statement.print
+  end
+
   private
 
   def sufficient_funds?(amount)
