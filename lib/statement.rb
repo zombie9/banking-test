@@ -20,6 +20,10 @@ class Statement
     end
   end
 
+  def get_transactions
+    @transactions
+  end
+
   private
 
   def format_currency(amount)
